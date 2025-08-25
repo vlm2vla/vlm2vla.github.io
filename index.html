@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FSSR6942QL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-FSSR6942QL');
+    </script>
+
+    <title>Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust </title>
+    <meta name="description" content="Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="css/bulma.min.css">
+    <link rel="stylesheet" href="css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="css/bulma-slider.min.css">
+    <link rel="stylesheet" href="css/bulma-myscope.css">
+    <!--<link rel="icon" href="img/hri_transparent.png">-->
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.8.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.3/clipboard.min.js"></script>
+
+    <script src="js/bulma-carousel.min.js"></script>
+    <script src="js/bulma-slider.min.js"></script>
+    <script defer src="js/fontawesome.all.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/app.js"></script>
+	
+    <style>
+        .nav-pills {
+          position: relative;
+          display: inline;
+        }
+        .imtip {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main">
+        <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+                Run-time Observation Interventions </br> Make Vision-Language-Action Models More Visually Robust
+            </h1>
+        </div>
+        
+        <div class="row has-text-centered">
+            <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                    <a href="https://aasherh.github.io/">Asher J. Hancock,</a>
+                </span>
+                <span class="author-block">
+                    <a href="https://allenzren.github.io/"> Allen Z. Ren,</a>
+                </span>
+                <span class="author-block">
+                    <a href="https://irom-lab.princeton.edu/majumdar/"> Anirudha Majumdar</a>
+                </span>
+            </div>
+
+            <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a href="https://arxiv.org/abs/2410.01971"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+            
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="https://github.com/irom-lab/byovla"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                    </a>
+                  </span>
+                  
+                  <!-- YouTube Link. -->
+                  <span class="link-block">
+                    <a href="https://youtu.be/9PXC1tnD91g"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fab fa-youtube"></i>
+                      </span>
+                      <span>Video</span>
+                    </a>
+                  </span>
+  
+                </div>
+  
+              </div>
+            <!--
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li><a href="https://aasherh.github.io/">Asher J. Hancock</a></li>
+                    <li><a href="https://allenzren.github.io/">Allen Z. Ren</a></li>
+                    <li><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></li>
+                </ul>
+            </div>
+            -->
+        </div>
+
+        <br>
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li><a href="https://irom-lab.princeton.edu/">
+                        <image src="img/irom_princeton_logo.png" height="150px", width="600px" ></image>
+                    </a></li>
+                    <!--
+                    <li> <a href="https://www.princeton.edu/">
+                        <image src="img/PU1line.svg" height="55px"></image>
+                    </a></li>
+                    -->
+                    
+                </ul>
+            </div>
+        </div>
+        <br>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <p style="text-align:center;">
+                </p>
+                <!--<h2 class="title is-3">TLDR</h2>-->
+                <p class="text-justify">
+                    We introduce <b>Bring Your Own VLA (BYOVLA)</b>: a run-time intervention scheme for vision-language-action (VLA) models 
+                    that improves baseline performance in the presence of task-irrelevant distractor objects and backgrounds without finetuning or access to the model's weights. </br> 
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+                <h2 class="title is-3">Approach</h2>
+                <p style="text-align:center;">
+                    <image src="img/anchor_figure.png" width="100%"></image>
+                </p>
+                <br>
+                <p class="text-justify">
+                    BYOVLA is predicated on three simple steps applied to a VLA's input image: 1) determine task-irrelevant regions, 2) quantify sensitivity by perturbing regions, and 3) transform the image. 
+                    Task-irrelevant regions are determined by a vision-language model (VLM). If the VLA is sensitive to a task-irrelevant region, BYOVLA transforms the image such that the model is no longer sensitive by simply removing objects and recoloring backgrounds distractions. 
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+            <p style="text-align:center;">
+            </p>
+            <h2 class="title is-3">Experiments</h2>
+                <p class="text-justify">
+                    We demonstrate BYOVLA on two popular open-source VLA models, Octo-Base and OpenVLA-7b. <b>BYOVLA enables greater task-success rates when task-irrelvant distractions are present.</b> All videos are 4x speed.<br>
+                </p>
+            </div>
+        </div>
+        <br>
+
+        <div class='myscope'>
+            <section class="hero is-light is-small">
+              <div class="hero-body">
+                <div class="container">
+                  <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item-1">
+                      <video poster="" id="1" controls muted loop playsinline height="100%">
+                          <source src="videos/4x/octo/octobase_noobjects_success_4x.mp4" type="video/mp4">
+                      </video>
+                      <div class="video-overlay">
+                          <p>
+                            Task: "place the carrot on yellow plate"<br>
+                            Scenario: no distractors <br>
+                            Policy: Octo-Base
+                          </p>
+                          <p style="color: green">Success</p>
+                      </div>
+                    </div>
+                    <div class="item-2">
+                        <video poster="" id="2" controls muted loop playsinline height="100%">
+                            <source src="videos/4x/octo/octobase_objects_failure_4x.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <p>
+                              Task: "place the carrot on yellow plate"<br>
+                              Scenario: object distractors <br>
+                              Policy: Octo-Base
+                            </p>
+                            <p style="color: red">Failure</p>
+                        </div>
+                    </div>
+                    <div class="item-3">
+                        <video poster="" id="3" controls muted loop playsinline height="100%">
+                            <source src="videos/4x/octo/octobyovla_objects_success_4x.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <p>
+                              Task: "place the carrot on yellow plate"<br>
+                              Scenario: object distractors <br>
+                              Policy: Octo-Base <b>with BYOVLA</b>
+                            </p>
+                            <p style="color: green">Success</p>
+                        </div>
+                    </div>
+                    <div class="item-4">
+                        <video poster="" id="4" controls muted loop playsinline height="100%">
+                            <source src="videos/4x/openvla/openvla_nodistractions_success_4x.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <p>
+                              Task: "place the eggplant in the pot"<br>
+                              Scenario: no distractors <br>
+                              Policy: OpenVLA-7b
+                            </p>
+                            <p style="color: green">Success</p>
+                        </div>
+                      </div>
+                      <div class="item-5">
+                          <video poster="" id="5" controls muted loop playsinline height="100%">
+                              <source src="videos/4x/openvla/openvla_distractions_failure_4x.mp4" type="video/mp4">
+                          </video>
+                          <div class="video-overlay">
+                              <p>
+                                Task: "place the eggplant in the pot"<br>
+                                Scenario: object distractors <br>
+                                Policy: OpenVLA-7b
+                              </p>
+                              <p style="color: red">Failure</p>
+                          </div>
+                      </div>
+                      <div class="item-6">
+                          <video poster="" id="6" controls muted loop playsinline height="100%">
+                              <source src="videos/4x/openvla/openvlabyovla_distractions_success_4x.mp4" type="video/mp4">
+                          </video>
+                          <div class="video-overlay">
+                              <p>
+                                Task: "place the eggplant in the pan"<br>
+                                Scenario: object distractors <br>
+                                Policy: OpenVLA-7b <b>with BYOVLA</b>
+                              </p>
+                              <p style="color: green">Success</p>
+                          </div>
+                      </div>
+                      <div class="item-7">
+                        <video poster="" id="6" controls muted loop playsinline height="100%">
+                            <source src="videos/4x/octo/octobase_backgrounds_failure_4x.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <p>
+                              Task: "place the carrot on yellow plate"<br>
+                              Scenario: background distractors <br>
+                              Policy: Octo-Base
+                            </p>
+                            <p style="color: red">Failure</p>
+                        </div>
+                       </div>
+                       <div class="item-8">
+                        <video poster="" id="6" controls muted loop playsinline height="100%">
+                            <source src="videos/4x/octo/octobyovla_backgrounds_success_4x.mp4" type="video/mp4">
+                        </video>
+                        <div class="video-overlay">
+                            <p>
+                              Task: "place the eggplant in the pot"<br>
+                              Scenario: background distractors <br>
+                              Policy: Octo-Base <b>with BYOVLA</b>
+                            </p>
+                            <p style="color: green">Success</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+        </div>
+        <br>
+
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+            <p style="text-align:center;">
+            </p>
+            <h2 class="title is-3">Results</h2>
+                <p class="text-justify">
+                    We evaluate BYOVLA on Octo-Base with the task "place the carrot on yellow plate." With distractions, the performance of the nominal VLA policy significantly drops. Augmenting Octo-Base with <b>BYOVLA allows the policy to achieve its nominal task-success rate </b> with distractions present. 
+                </p>
+            <!--</div>-->
+            <br>
+            <p style="text-align:center;">
+                <image src="img/octo_figure.png" width="100%"></image>
+            </p>
+            <br>
+            <p class="text-justify">
+                We also evaluate BYOVLA on OpenVLA-7b with the task "put the eggplant in the pot." Even though OpenVLA is 75x larger than Octo-Base, task-irrelevant distractions markedly degrade performance. We find that application of BYOVLA helps OpenVLA achieve its nominal task-success rate with distractions present. 
+            </p>
+            <br>
+            <p style="text-align:center;">
+                <image src="img/openVLA_results.png" width="100%"></image>
+            </p>
+        
+        </div>
+
+        </div>
+        <br>
+        <!--
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{hancock2024byovla,
+                                title={Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust},
+                                author={Hancock, Asher J., and Ren, Allen Z., and Majumdar, Anirudha}
+                                journal={arXiv preprint FILL OUT LATER},
+                                year={2024},}
+            </code></pre>
+        </div>
+        -->
+
+    <!---->
+        <div class="row justify-content-md-center">
+            <div class="col-md-10 col-lg-8">
+            <p style="text-align:center;">
+            </p>
+        <div class="container is-max-desktop content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{hancock24byovla,
+      title={Run-time Observation Interventions Make Vision-Language-Action Models More Visually Robust},
+      author={Hancock, Asher J., and Ren, Allen Z., and Majumdar, Anirudha},
+      journal = {arXiv preprint arXiv:2410.01971},
+      year={2024},
+  } </code></pre>
+          </div>
+          </div>
+          </div>
+
+    </div>
+</body>
+</html>
