@@ -80,9 +80,10 @@
                 </span>
             </div>
 
+            <!--
             <div class="column has-text-centered">
                 <div class="publication-links">
-                  <!-- PDF Link. -->
+                  
                   <span class="link-block">
                     <a href="https://arxiv.org/abs/2410.01971"
                       class="external-link button is-normal is-rounded is-dark">
@@ -93,7 +94,7 @@
                     </a>
                   </span>
             
-                  <!-- Code Link. -->
+                  
                   <span class="link-block">
                     <a href="https://github.com/irom-lab/byovla"
                       class="external-link button is-normal is-rounded is-dark">
@@ -104,7 +105,7 @@
                     </a>
                   </span>
                   
-                  <!-- YouTube Link. -->
+                  
                   <span class="link-block">
                     <a href="https://youtu.be/9PXC1tnD91g"
                       class="external-link button is-normal is-rounded is-dark">
@@ -118,14 +119,6 @@
                 </div>
   
               </div>
-            <!--
-            <div class="col-md-12 text-center">
-                <ul class="list-inline">
-                    <li><a href="https://aasherh.github.io/">Asher J. Hancock</a></li>
-                    <li><a href="https://allenzren.github.io/">Allen Z. Ren</a></li>
-                    <li><a href="https://irom-lab.princeton.edu/majumdar/">Anirudha Majumdar</a></li>
-                </ul>
-            </div>
             -->
         </div>
 
@@ -147,17 +140,16 @@
         </div>
         <br>
 
-       <!--  <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-8">
                 <p style="text-align:center;">
                 </p>
                 <p class="text-justify">
-                    We introduce <b>Bring Your Own VLA (BYOVLA)</b>: a run-time intervention scheme for vision-language-action (VLA) models 
-                    that improves baseline performance in the presence of task-irrelevant distractor objects and backgrounds without finetuning or access to the model's weights. </br> 
+                    We introduce <b>VLM2VLA</b>, a vision-language-action (VLA) model training paradigm that represents low-level robot actions as natural language to better align the robot fine-tuning data with the base vision-language model's (VLM's) representation space. This alignment preserves the VLM's foundational reasoning, enabling zero-shot generalization to new scenarios with only minimal model modifications through parameter-efficient fine-tuning.</br>
                 </p>
             </div>
         </div>
-        <br> -->
+        <br>
 
         <!-- <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-8">
@@ -174,17 +166,22 @@
         </div>
         <br> -->
 
-       <!--  <div class="row justify-content-md-center">
+        <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-8">
             <p style="text-align:center;">
             </p>
-            <h2 class="title is-3">Experiments</h2>
+            <h2 class="title is-3">Abstract</h2>
                 <p class="text-justify">
-                    We demonstrate BYOVLA on two popular open-source VLA models, Octo-Base and OpenVLA-7b. <b>BYOVLA enables greater task-success rates when task-irrelvant distractions are present.</b> All videos are 4x speed.<br>
+                    Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, which hinders generalization to novel scenarios, instruction following, and semantic understanding.
+                    We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data.
+                    Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm whose core idea is to <i>represent low-level actions using natural language</i> by relabeling robot demonstration data. 
+                    This methodology better aligns the fine-tuning data to the base model's representation space, thereby mitigating the distribution mismatch while enabling effective robotic control. 
+                    As a result, the VLM can be fine-tuned on robot teleoperation data using a policy architecture that makes no modifications to the underlying VLM and without expensive co-training on internet-scale VLM datasets. 
+                    Through extensive Visual Question Answering (VQA) studies and real-world robotics experiments, we demonstrate that <b>VLM2VLA</b> preserves the VLM's core capabilities, enabling zero-shot generalization to novel tasks that require open-world semantic reasoning and multilingual instruction following.<br>
                 </p>
             </div>
         </div>
-        <br> -->
+        <br>
 
         <!-- <div class='myscope'>
             <section class="hero is-light is-small">
