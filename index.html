@@ -349,19 +349,56 @@
         <!-- ================================================================================= -->
          
         <!-- ================================================================================= -->
-        <!-- START ZERO-SHOT GENERALIZATION SECTION -->
+        <!-- START REAL ROBOT EXPERIMENTS SECTION -->
         <!-- ================================================================================= -->
 
-        <!-- Add this CSS to the <head> of your HTML file, or include it here in a <style> tag -->
+        <!-- This CSS provides the styling for the carousel -->
         <style>
-            .video-gallery-item {
+            .carousel-container {
+                position: relative;
                 width: 100%;
-                border-radius: 12px; /* Controls the roundness of the corners */
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Adds a subtle shadow for depth */
-                margin-top: 15px; /* Adds space between title and video */
+                max-width: 720px; /* Adjust this to control the max width of your video */
+                margin: auto;
             }
-            .video-column {
-                margin-bottom: 25px; /* Adds space below each column on mobile */
+            .carousel-slide {
+                display: none; /* Hide all slides by default */
+                text-align: center;
+            }
+            .carousel-slide.active-slide {
+                display: block; /* Show only the active slide */
+            }
+            .video-item {
+                width: 100%;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                margin-top: 10px;
+            }
+            /* Styling for the next/previous arrows */
+            .carousel-arrow {
+                position: absolute;
+                top: 55%; /* Vertically center the arrows on the video */
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .carousel-arrow:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            .carousel-arrow.prev {
+                left: 15px;
+            }
+            .carousel-arrow.next {
+                right: 15px;
             }
         </style>
 
@@ -379,56 +416,40 @@
                 </div>
                 <br>
 
-                <!-- Main row to hold all four video columns -->
-                <div class="row justify-content-md-center text-center">
-                    
-                    <!-- Video 1: Pick up Carrot -->
-                    <div class="col-md-3 video-column">
-                        <h4 class="title is-5">Pick up the Carrot</h4>
-                        <video class="video-gallery-item" autoplay loop muted playsinline src="videos/pickupcarrot.mp4"></video>
-                    </div>
-
-                    <!-- Video 2: Pick up Item on a Shirt -->
-                    <div class="col-md-3 video-column">
-                        <h4 class="title is-5">Pick up the item on Ash Ketchum</h4>
-                        <video class="video-gallery-item" autoplay loop muted playsinline src="videos/pickupitemonash.mp4"></video>
-                    </div>
-
-                    <!-- Video 3: Hindi -->
-                    <div class="col-md-3 video-column">
-                        <h4 class="title is-5">Pick up the Carrot (Instruction in Hindi)</h4>
-                        <video class="video-gallery-item" autoplay loop muted playsinline src="videos/hindi.mp4"></video>
-                    </div>
-
-                    <!-- Video 4: Mandarin -->
-                    <div class="col-md-3 video-column">
-                        <h4 class="title is-5">Pick up the Carrot (Instruction in Mandarin)</h4>
-                        <video class="video-gallery-item" autoplay loop muted playsinline src="videos/mandarin.mp4"></video>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-        <!-- ================================================================================= -->
-        <!-- END ZERO-SHOT GENERALIZATION SECTION -->
-        <!-- ================================================================================= -->
-
-        <!-- ================================================================================= -->
-        <!-- START ROBOTIC MANIPULATION EXPERIMENTS SECTION -->
-        <!-- ================================================================================= -->
-        <section class="section">
-            <div class="container is-max-desktop">
-                
-                <!-- Section Title -->
+                <!-- ROW 1: THE VIDEO CAROUSEL -->
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
-                        <h2 class="title is-3" style="text-align: center;">Robotic Manipulation Experiments</h2>
+                        <div class="carousel-container">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the Carrot</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/pickupcarrot.mp4"></video>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the item on Ash Ketchum</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/pickupitemonash.mp4"></video>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the Carrot (Instruction in Hindi)</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/hindi.mp4"></video>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the Carrot (Instruction in Mandarin)</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/mandarin.mp4"></video>
+                            </div>
+                            
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+                            <button class="carousel-arrow next" onclick="changeSlide(1)">&#10095;</button>
+                        </div>
                     </div>
                 </div>
                 <br>
 
-                <!-- Content Row -->
+                <!-- ROW 2: THE STATIC GRAPH -->
                 <div class="row justify-content-md-center">
                     <div class="col-md-10 col-lg-8">
                         <p style="text-align:center;">
@@ -436,18 +457,56 @@
                         </p>
                         <br>
                         <p class="text-justify">
-                            Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
-                            manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization
-                            capabilities. Embodied Chain of Thought (ECoT) and <strong>VLM2VLA</strong> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
-                            was fine-tuned on the Open-X-Embodiment dataset.
+                            Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization capabilities. Embodied Chain of Thought (ECoT) and <strong>VLM2VLA</strong> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA was fine-tuned on the Open-X-Embodiment dataset.
                         </p>
                     </div>
                 </div>
 
             </div>
         </section>
+
+        <!-- This JavaScript provides the functionality for the carousel -->
+        <script>
+            // Set the default slide to be "Pick up the item on Ash Ketchum", which is the 2nd video (index 1)
+            let currentSlideIndex = 1;
+            
+            // Get all the slide elements from the page
+            const slides = document.querySelectorAll(".carousel-slide");
+
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Hide all slides first
+                slides.forEach(slide => {
+                    slide.classList.remove('active-slide');
+                });
+                // Show the requested slide
+                slides[index].classList.add('active-slide');
+            }
+
+            // Function to change the slide when an arrow is clicked
+            function changeSlide(direction) {
+                // Update the index
+                currentSlideIndex += direction;
+
+                // Wrap around if we go past the end or before the beginning
+                if (currentSlideIndex >= slides.length) {
+                    currentSlideIndex = 0;
+                } else if (currentSlideIndex < 0) {
+                    currentSlideIndex = slides.length - 1;
+                }
+                
+                // Show the new slide
+                showSlide(currentSlideIndex);
+            }
+
+            // Initialize the carousel to show the default slide when the page loads
+            document.addEventListener("DOMContentLoaded", function() {
+                showSlide(currentSlideIndex);
+            });
+        </script>
+
         <!-- ================================================================================= -->
-        <!-- END ROBOTIC MANIPULATION EXPERIMENTS SECTION -->
+        <!-- END REAL ROBOT EXPERIMENTS SECTION -->
         <!-- ================================================================================= -->
 
         <!-- <div class='myscope'>
