@@ -190,139 +190,163 @@
 
 
 
-        <!-- Start of Table Section -->
-        <div class="row justify-content-md-center">
-            <div class="col-md-12 col-lg-10">
-                <h2 class="title is-3" style="text-align: center;">Multimodal Understanding Evaluation</h2>
-                <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;">
-                    Comparison of VLMs and VLAs across multimodal understanding benchmarks. We compare against Prismatic VLM, OpenVLA, ECoT, and Gemma models. Our method preserves strong performance across diverse multimodal understanding tasks while maintaining robotic capabilities. The best and second best results for each benchmark are shown in <strong>bold</strong> and <u>underlined</u>, respectively.
-                </p>
-                
-                <!-- The table needs to be wrapped in a div to be made responsive -->
-                <div style="overflow-x: auto;">
-                    <table class="table table-bordered text-center">
-                        <thead>
-                            <tr>
-                                <th>Method</th>
-                                <th>#Params</th>
-                                <th>MMMU</th>
-                                <th>MMStar</th>
-                                <th>MME</th>
-                                <th>OCRBench</th>
-                                <th>MMB-en</th>
-                                <th>MMB-cn</th>
-                                <th>TextVQA</th>
-                                <th>DocVQA</th>
-                                <th>InfoVQA</th>
-                                <th>AI2D</th>
-                                <th>ChartQA</th>
-                                <th>RealWorldQA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Prismatic VLM</strong></td>
-                                <td>7b</td>
-                                <td>35.0</td>
-                                <td>38.8</td>
-                                <td><strong>1456.6</strong></td>
-                                <td>32.0</td>
-                                <td>66.2</td>
-                                <td>55.7</td>
-                                <td>42.5</td>
-                                <td>17.5</td>
-                                <td>19.7</td>
-                                <td>54.6</td>
-                                <td>16.7</td>
-                                <td>30.8</td>
-                            </tr>
-                            <tr>
-                                <td><strong>OpenVLA</strong></td>
-                                <td>7b</td>
-                                <td>26.3</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>43.0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td><strong>ECoT</strong></td>
-                                <td>7b</td>
-                                <td>26.6</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0.01</td>
-                                <td>3.7</td>
-                                <td>4.1</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>0</td>
-                                <td>25.6</td>
-                            </tr>
-                            <tr>
-                                <td><strong>Gemma-3-4b-it</strong></td>
-                                <td>4b</td>
-                                <td>39.3</td>
-                                <td>37.1</td>
-                                <td>1205.8</td>
-                                <td><u>70.2</u></td>
-                                <td><u>68.6</u></td>
-                                <td>64.3</td>
-                                <td>61.5</td>
-                                <td>68.8</td>
-                                <td>40.9</td>
-                                <td>70.5</td>
-                                <td>50.3</td>
-                                <td><u>44.0</u></td>
-                            </tr>
-                            <tr>
-                                <td><strong>Gemma-3-12b-it</strong></td>
-                                <td>12b</td>
-                                <td><strong>46.0</strong></td>
-                                <td><u>46.3</u></td>
-                                <td>1182.3</td>
-                                <td><strong>75.0</strong></td>
-                                <td><strong>76.9</strong></td>
-                                <td><strong>74.7</strong></td>
-                                <td><strong>68.9</strong></td>
-                                <td><strong>80.6</strong></td>
-                                <td><strong>50.4</strong></td>
-                                <td><strong>78.5</strong></td>
-                                <td><u>55.1</u></td>
-                                <td><strong>50.6</strong></td>
-                            </tr>
-                            <!-- This is the highlighted row for "Ours" -->
-                            <tr style="background-color: #f2f2f2;">
-                                <td><strong>Ours</strong></td>
-                                <td>12b</td>
-                                <td><u>42.7</u></td>
-                                <td><strong>48.0</strong></td>
-                                <td><u>1391.7</u></td>
-                                <td>63.9</td>
-                                <td>68.5</td>
-                                <td><u>67.6</u></td>
-                                <td><u>64.9</u></td>
-                                <td><u>78.4</u></td>
-                                <td><u>46.2</u></td>
-                                <td><u>74.0</u></td>
-                                <td><strong>58.3</strong></td>
-                                <td>43.3</td>
-                            </tr>
-                        </tbody>
-                    </table>
+        <!-- ================================================================================= -->
+        <!-- START MULTIMODAL UNDERSTANDING EVALUATION SECTION -->
+        <!-- ================================================================================= -->
+        <section class="section">
+            <div class="container is-max-desktop">
+
+                <!-- Section Title and Description (Full Width) -->
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12 col-lg-10">
+                        <h2 class="title is-3" style="text-align: center;">Multimodal Understanding Evaluation</h2>
+                        <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;">
+                            Comparison of VLMs and VLAs across multimodal understanding benchmarks. Our method preserves strong performance across diverse multimodal understanding tasks while maintaining robotic capabilities. The best and second best results for each benchmark are shown in <strong>bold</strong> and <u>underlined</u>, respectively.
+                        </p>
+                    </div>
                 </div>
+                <br>
+
+                <!-- NEW Row for Side-by-Side Content -->
+                <div class="row justify-content-md-center">
+                    
+                    <!-- Left Column (8/12 width): The Table -->
+                    <div class="col-md-8">
+                        <div style="overflow-x: auto;">
+                            <table class="table table-bordered text-center">
+                                <thead>
+                                    <tr>
+                                        <th>Method</th>
+                                        <th>#Params</th>
+                                        <th>MMMU</th>
+                                        <th>MMStar</th>
+                                        <th>MME</th>
+                                        <th>OCRBench</th>
+                                        <th>MMB-en</th>
+                                        <th>MMB-cn</th>
+                                        <th>TextVQA</th>
+                                        <th>DocVQA</th>
+                                        <th>InfoVQA</th>
+                                        <th>AI2D</th>
+                                        <th>ChartQA</th>
+                                        <th>RealWorldQA</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Prismatic VLM</strong></td>
+                                        <td>7b</td>
+                                        <td>35.0</td>
+                                        <td>38.8</td>
+                                        <td><strong>1456.6</strong></td>
+                                        <td>32.0</td>
+                                        <td>66.2</td>
+                                        <td>55.7</td>
+                                        <td>42.5</td>
+                                        <td>17.5</td>
+                                        <td>19.7</td>
+                                        <td>54.6</td>
+                                        <td>16.7</td>
+                                        <td>30.8</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>OpenVLA</strong></td>
+                                        <td>7b</td>
+                                        <td>26.3</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>43.0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>ECoT</strong></td>
+                                        <td>7b</td>
+                                        <td>26.6</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0.01</td>
+                                        <td>3.7</td>
+                                        <td>4.1</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>0</td>
+                                        <td>25.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Gemma-3-4b-it</strong></td>
+                                        <td>4b</td>
+                                        <td>39.3</td>
+                                        <td>37.1</td>
+                                        <td>1205.8</td>
+                                        <td><u>70.2</u></td>
+                                        <td><u>68.6</u></td>
+                                        <td>64.3</td>
+                                        <td>61.5</td>
+                                        <td>68.8</td>
+                                        <td>40.9</td>
+                                        <td>70.5</td>
+                                        <td>50.3</td>
+                                        <td><u>44.0</u></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Gemma-3-12b-it</strong></td>
+                                        <td>12b</td>
+                                        <td><strong>46.0</strong></td>
+                                        <td><u>46.3</u></td>
+                                        <td>1182.3</td>
+                                        <td><strong>75.0</strong></td>
+                                        <td><strong>76.9</strong></td>
+                                        <td><strong>74.7</strong></td>
+                                        <td><strong>68.9</strong></td>
+                                        <td><strong>80.6</strong></td>
+                                        <td><strong>50.4</strong></td>
+                                        <td><strong>78.5</strong></td>
+                                        <td><u>55.1</u></td>
+                                        <td><strong>50.6</strong></td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td><strong>Ours</strong></td>
+                                        <td>12b</td>
+                                        <td><u>42.7</u></td>
+                                        <td><strong>48.0</strong></td>
+                                        <td><u>1391.7</u></td>
+                                        <td>63.9</td>
+                                        <td>68.5</td>
+                                        <td><u>67.6</u></td>
+                                        <td><u>64.9</u></td>
+                                        <td><u>78.4</u></td>
+                                        <td><u>46.2</u></td>
+                                        <td><u>74.0</u></td>
+                                        <td><strong>58.3</strong></td>
+                                        <td>43.3</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Right Column (4/12 width): The Image -->
+                    <div class="col-md-4 align-self-center">
+                        <img src="img/vqa.png" class="img-fluid" alt="Radar plot of <b>VLM2VLA</b> against the base VLM backbone.">
+                        <p class="text-center mt-2"><em>Qualitative examples of VQA performance.</em></p>
+                    </div>
+
+                </div>
+
             </div>
-        </div>
-        <!-- End of Table Section -->
+        </section>
+        <!-- ================================================================================= -->
+        <!-- END MULTIMODAL UNDERSTANDING EVALUATION SECTION -->
+        <!-- ================================================================================= -->
 
         <!-- ================================================================================= -->
         <!-- START ROBOTIC MANIPULATION EXPERIMENTS SECTION -->
