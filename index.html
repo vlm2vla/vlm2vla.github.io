@@ -123,19 +123,41 @@
         </div>
 
         <br>
+        <!-- ================================================================================= -->
+        <!-- LOGO BAR SECTION (RECOMMENDED FLEXBOX METHOD) -->
+        <!-- ================================================================================= -->
         <div class="row">
-            <div class="col-md-12 text-center">
-                <ul class="list-inline">
-                    <li><a href="https://irom-lab.princeton.edu/">
-                        <image src="img/irom_princeton_logo.png" height="150px", width="600px" ></image>
-                    </a></li>
-                    <!--
-                    <li> <a href="https://www.princeton.edu/">
-                        <image src="img/PU1line.svg" height="55px"></image>
-                    </a></li>
-                    -->
-                    
-                </ul>
+            <div class="col-md-12">
+                <!-- 
+                - d-flex: Turns this into a flex container.
+                - justify-content-center: Centers the logos horizontally.
+                - align-items-center: Aligns the logos vertically (very important!).
+                -->
+                <div class="d-flex justify-content-center align-items-center">
+
+                    <!-- Logo 1: IROM Lab -->
+                    <div class="mx-4"> <!-- mx-4 adds horizontal margin for spacing -->
+                        <a href="https://irom-lab.princeton.edu/">
+                            <img src="img/irom_lab.png" alt="Intelligent Robot Motion Lab Logo" height="60px">
+                        </a>
+                    </div>
+
+                    <!-- Logo 2: Princeton -->
+                    <div class="mx-4">
+                        <a href="https://www.princeton.edu/">
+                            <img src="img/princeton.png" alt="Princeton University Logo" height="60px">
+                        </a>
+                    </div>
+
+                    <!-- Logo 3: Your Project/Lab -->
+                    <div class="mx-4">
+                        <!-- If this logo shouldn't be a link, you can remove the <a> tag -->
+                        <a href="#"> 
+                            <img src="img/logowithtext.svg" alt="Princeton Visual AI Lab Logo" height="60px">
+                        </a>
+                    </div>
+
+                </div>
             </div>
         </div>
         <br>
