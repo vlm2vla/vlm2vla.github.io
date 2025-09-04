@@ -60,10 +60,16 @@
         margin-bottom: 1rem; /* Space between image and caption */
     }
     
-    /* NEW: This class creates a centered container with a fixed max-width */
-    .figure-container {
-        max-width: 550px; /* Adjust this value to make both images larger or smaller */
-        margin: 0 auto;   /* This centers the container within the column */
+    /* NEW: A WIDER container for the safety degradation image */
+    .figure-container--wide {
+        max-width: 700px; /* Adjust this value to control the size */
+        margin: 0 auto;   /* This centers the container */
+    }
+
+    /* NEW: A NARROWER container for the logprobs image to make it appear taller/larger */
+    .figure-container--narrow {
+        max-width: 400px; /* Adjust this value to control the size */
+        margin: 0 auto;   /* This centers the container */
     }
 </style>
 
@@ -79,7 +85,7 @@
 
     /* NEW: A modifier class to make a specific logo smaller */
     .logo-item--smaller {
-        max-height: 40px; /* Adjust this value down until it looks right */
+        max-height: 25px; /* Adjust this value down until it looks right */
     }
 
     /* Makes the image inside the container fit properly */
@@ -242,7 +248,7 @@
         <br>
 
         <!-- ================================================================================= -->
-<!-- START CORE IDEA / METHODOLOGY SECTION (CORRECTED LAYOUT) -->
+<!-- START CORE IDEA / METHODOLOGY SECTION (FINAL LAYOUT) -->
 <!-- ================================================================================= -->
 
 <style>
@@ -252,10 +258,16 @@
         margin-bottom: 1rem; /* Space between image and caption */
     }
     
-    /* NEW: This class creates a centered container with a fixed max-width */
-    .figure-container {
-        max-width: 550px; /* Adjust this value to make both images larger or smaller */
-        margin: 0 auto;   /* This centers the container within the column */
+    /* A WIDER container for the safety degradation image */
+    .figure-container--wide {
+        max-width: 700px; /* Adjust this value to control the size */
+        margin: 0 auto;   /* This centers the container */
+    }
+
+    /* A NARROWER container for the logprobs image to make it appear taller/larger */
+    .figure-container--narrow {
+        max-width: 400px; /* Adjust this value to control the size */
+        margin: 0 auto;   /* This centers the container */
     }
 </style>
 
@@ -273,11 +285,11 @@
         </div>
         <br>
 
-        <!-- ROW 1 FOR THE FIRST IMAGE -->
+        <!-- ROW 1 FOR THE LOGPROBS IMAGE (NARROW CONTAINER) -->
         <div class="row justify-content-center text-center">
             <div class="col-md-8">
-                <!-- Added the new figure-container div -->
-                <div class="figure-container">
+                <!-- Using the NARROW container here -->
+                <div class="figure-container--narrow">
                     <img src="img/logprobs.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
                 </div>
                 <p class="text-justify">
@@ -286,13 +298,13 @@
             </div>
         </div>
         
-        <br><br> <!-- Added extra space between the two figures -->
+        <br><br> <!-- Extra space between the two figures -->
 
-        <!-- ROW 2 FOR THE SECOND IMAGE -->
+        <!-- ROW 2 FOR THE SAFETY IMAGE (WIDE CONTAINER) -->
         <div class="row justify-content-center text-center">
             <div class="col-md-8">
-                <!-- Added the new figure-container div -->
-                <div class="figure-container">
+                <!-- Using the WIDE container here -->
+                <div class="figure-container--wide">
                     <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime.">
                 </div>
                 <p class="text-justify">
