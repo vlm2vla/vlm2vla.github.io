@@ -52,6 +52,24 @@
           left: 0;
         }
     </style>
+
+    <style>
+    /* Creates a consistent container for each logo */
+    .logo-item {
+        max-width: 220px;  /* Adjust this value to control the max width of each logo */
+        max-height: 60px; /* This is the max height we want */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Makes the image inside the container fit properly */
+    .logo-item img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain; /* Ensures the image scales without being distorted */
+    }
+    </style>
 </head>
 <body>
     <div class="container" id="main">
@@ -124,36 +142,31 @@
 
         <br>
         <!-- ================================================================================= -->
-        <!-- LOGO BAR SECTION (RECOMMENDED FLEXBOX METHOD) -->
+        <!-- LOGO BAR SECTION (CORRECTED FLEXBOX METHOD) -->
         <!-- ================================================================================= -->
         <div class="row">
             <div class="col-md-12">
-                <!-- 
-                - d-flex: Turns this into a flex container.
-                - justify-content-center: Centers the logos horizontally.
-                - align-items-center: Aligns the logos vertically (very important!).
-                -->
                 <div class="d-flex justify-content-center align-items-center">
 
                     <!-- Logo 1: IROM Lab -->
-                    <div class="mx-4"> <!-- mx-4 adds horizontal margin for spacing -->
+                    <div class="mx-4 logo-item"> <!-- Added 'logo-item' class -->
                         <a href="https://irom-lab.princeton.edu/">
-                            <img src="img/irom_lab.png" alt="Intelligent Robot Motion Lab Logo" height="60px">
+                            <!-- Removed height attribute from img tag -->
+                            <img src="img/irom_lab.png" alt="Intelligent Robot Motion Lab Logo">
                         </a>
                     </div>
 
                     <!-- Logo 2: Princeton -->
-                    <div class="mx-4">
+                    <div class="mx-4 logo-item"> <!-- Added 'logo-item' class -->
                         <a href="https://www.princeton.edu/">
-                            <img src="img/princeton.png" alt="Princeton University Logo" height="60px">
+                            <img src="img/princeton.png" alt="Princeton University Logo">
                         </a>
                     </div>
 
                     <!-- Logo 3: Your Project/Lab -->
-                    <div class="mx-4">
-                        <!-- If this logo shouldn't be a link, you can remove the <a> tag -->
+                    <div class="mx-4 logo-item"> <!-- Added 'logo-item' class -->
                         <a href="#"> 
-                            <img src="img/logowithtext.svg" alt="Princeton Visual AI Lab Logo" height="60px">
+                            <img src="img/logowithtext.svg" alt="Princeton Visual AI Lab Logo">
                         </a>
                     </div>
 
