@@ -174,8 +174,8 @@
             <div class="col-md-10 col-lg-8">
             <p style="text-align:center;">
             </p>
-            <h2 class="title is-3">Abstract</h2>
-                <p class="text-justify">
+            <h2 class="title is-3" style="text-align: center;">Abstract</h2>
+                <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;">
                     Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, which hinders generalization to novel scenarios, instruction following, and semantic understanding.
                     We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data.
                     Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm whose core idea is to <i>represent low-level actions using natural language</i> by relabeling robot demonstration data. 
@@ -324,21 +324,41 @@
         </div>
         <!-- End of Table Section -->
 
-        <div class="row justify-content-md-center">
-            <div class="col-md-10 col-lg-8">
-                <p style="text-align:center;">
-                    <image src="img/model_comparison_generalization_types_OOD.png" width="100%"></image>
-                </p>
+        <!-- ================================================================================= -->
+        <!-- START ROBOTIC MANIPULATION EXPERIMENTS SECTION -->
+        <!-- ================================================================================= -->
+        <section class="section">
+            <div class="container is-max-desktop">
+                
+                <!-- Section Title -->
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12">
+                        <h2 class="title is-3" style="text-align: center;">Robotic Manipulation Experiments</h2>
+                    </div>
+                </div>
                 <br>
-                <p class="text-justify">
-                    Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
-                    manipulation tasks. <b>VLM2VLA</b> maintains high success rates on OOD tasks, highlighting its superior generalization
-                    capabilities. Embodied Chain of Thought (ECoT) and <b>VLM2VLA</b> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
-                    was fine-tuned on the Open-X-Embodiment dataset.</br>
-                </p>
+
+                <!-- Content Row -->
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 col-lg-8">
+                        <p style="text-align:center;">
+                            <img src="img/model_comparison_generalization_types_OOD.png" width="100%" alt="Graph comparing VLM2VLA performance on in-distribution and out-of-distribution tasks against OpenVLA and ECoT.">
+                        </p>
+                        <br>
+                        <p class="text-justify">
+                            Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
+                            manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization
+                            capabilities. Embodied Chain of Thought (ECoT) and <strong>VLM2VLA</strong> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
+                            was fine-tuned on the Open-X-Embodiment dataset.
+                        </p>
+                    </div>
+                </div>
+
             </div>
-        </div>
-        <br>
+        </section>
+        <!-- ================================================================================= -->
+        <!-- END ROBOTIC MANIPULATION EXPERIMENTS SECTION -->
+        <!-- ================================================================================= -->
 
         <!-- <div class='myscope'>
             <section class="hero is-light is-small">
