@@ -173,6 +173,12 @@
         </div>
         <br>
 
+        <!--<Add a large space between logos and the image below>-->
+        <br>
+        <br>
+        <br>
+
+
         <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-8">
                 <p style="text-align:center;">
@@ -221,58 +227,62 @@
         <br>
 
         <!-- ================================================================================= -->
-        <!-- START CORE IDEA / METHODOLOGY SECTION (IMPROVED LAYOUT) -->
-        <!-- ================================================================================= -->
+<!-- START CORE IDEA / METHODOLOGY SECTION (IMPROVED SIDE-BY-SIDE LAYOUT) -->
+<!-- ================================================================================= -->
 
-        <style>
-            .method-image {
-                border-radius: 10px;
-                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                margin-bottom: 1rem; /* Space between image and caption */
-            }
-        </style>
+<style>
+    .method-image {
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        margin-bottom: 1rem; /* Space between image and caption */
+    }
+    .figure-column {
+        /* This class will ensure columns stack nicely on medium screens and below */
+        margin-bottom: 2rem; 
+    }
+</style>
 
-        <section class="section">
-            <div class="container is-max-desktop">
+<section class="section">
+    <div class="container is-max-desktop">
 
-                <!-- Main Section Title and Summary Paragraph -->
-                <div class="row justify-content-md-center">
-                    <div class="col-md-12 col-lg-10">
-                        <h2 class="title is-3" style="text-align: center;">The Core Idea: Aligning Actions with Language</h2>
-                        <p class="text-justify">
-                            Fine-tuning VLMs into robotic policies (VLAs) often leads to a critical problem: the model forgets its vast world knowledge. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to address this problem at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This data transformation, combined with parameter-efficient fine-tuning strategies, such as Low-Rank Adaptation (LoRA), helps preserve the model's reasoning capabilities without expensive co-training or complex architectural changes.
-                        </p>
-                    </div>
-                </div>
-                <br>
-
-                <!-- === CHANGED HERE: ROW 1 FOR THE FIRST IMAGE === -->
-                <div class="row justify-content-center text-center">
-                    <div class="col-md-8"> <!-- Using a wider column for a larger image -->
-                        <img src="img/logprobs.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
-                        <p class="text-justify">
-                            <em><strong>Before fine-tuning</strong>, the base VLM (Gemma-3-12B-IT) assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions. This shows our data is better aligned with the model's original knowledge.</em>
-                        </p>
-                    </div>
-                </div>
-                
-                <br><br> <!-- Added extra space between the two figures -->
-
-                <!-- === CHANGED HERE: ROW 2 FOR THE SECOND IMAGE === -->
-                <div class="row justify-content-center text-center">
-                    <div class="col-md-8"> <!-- Using a wider column for a larger image -->
-                        <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime.">
-                        <p class="text-justify">
-                            <em><strong>After fine-tuning</strong>, Traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.</em>
-                        </p>
-                    </div>
-                </div>
-
+        <!-- Main Section Title and Summary Paragraph -->
+        <div class="row justify-content-md-center">
+            <div class="col-md-12 col-lg-10">
+                <h2 class="title is-3" style="text-align: center;">The Core Idea: Aligning Actions with Language</h2>
+                <p class="text-justify">
+                    Fine-tuning VLMs into robotic policies (VLAs) often leads to a critical problem: the model forgets its vast world knowledge. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to address this problem at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This data transformation, combined with parameter-efficient fine-tuning strategies, such as Low-Rank Adaptation (LoRA), helps preserve the model's reasoning capabilities without expensive co-training or complex architectural changes.
+                </p>
             </div>
-        </section>
-        <!-- ================================================================================= -->
-        <!-- END CORE IDEA / METHODOLOGY SECTION -->
-        <!-- ================================================================================= -->
+        </div>
+        <br>
+
+        <!-- === NEW LAYOUT: ROW FOR THE TWO SIDE-BY-SIDE IMAGES === -->
+        <!-- We use align-items-center to vertically center the content of both columns -->
+        <div class="row justify-content-center align-items-center">
+            
+            <!-- Left Column (4/12 width): Log Probs Image (Narrower) -->
+            <div class="col-lg-4 col-md-12 text-center figure-column">
+                <img src="img/logprobs.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
+                <p class="text-justify">
+                    <em><strong>Before fine-tuning</strong>, the base VLM assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions. This shows our data is better aligned with the model's original knowledge.</em>
+                </p>
+            </div>
+
+            <!-- Right Column (8/12 width): Safety Knowledge Image (Wider) -->
+            <div class="col-lg-8 col-md-12 text-center figure-column">
+                <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime.">
+                <p class="text-justify">
+                    <em><strong>After fine-tuning</strong>, traditional VLAs lose the ability to reason about safety. Our method preserves this crucial world knowledge, allowing the model to understand and respond to safety-critical queries instead of just outputting motor commands.</em>
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- ================================================================================= -->
+<!-- END CORE IDEA / METHODOLOGY SECTION -->
+<!-- ================================================================================= -->
 
 
 
