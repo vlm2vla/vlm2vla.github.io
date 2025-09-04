@@ -170,24 +170,26 @@
         <br>
         <br>
         <!-- ================================================================================= -->
-        <!-- LOGO BAR SECTION (CORRECTED FLEXBOX METHOD) -->
+        <!-- LOGO BAR SECTION (SIMPLE & CORRECTED) -->
         <!-- ================================================================================= -->
         <div class="row">
             <div class="col-md-12">
+                <!-- The d-flex container is essential for easy horizontal and vertical centering -->
                 <div class="d-flex justify-content-center align-items-center">
 
                     <!-- Logo 1: IROM Lab -->
-                    <div class="mx-4 logo-item"> <!-- Added 'logo-item' class -->
+                    <div style="margin: 0 20px;"> <!-- Controls spacing -->
                         <a href="https://irom-lab.princeton.edu/">
-                            <!-- Removed height attribute from img tag -->
-                            <img src="img/irom_lab.png" alt="Intelligent Robot Motion Lab Logo">
+                            <!-- Set a height, width will adjust automatically -->
+                            <img src="img/irom_lab.png" alt="IROM Lab Logo" style="height: 40px;">
                         </a>
                     </div>
 
-                    <!-- Logo 3: Your Project/Lab -->
-                    <div class="mx-4 logo-item--smaller"> <!-- Added 'logo-item' class -->
-                        <a href="#"> 
-                            <img src="img/logowithtext.png" alt="Princeton Visual AI Lab Logo">
+                    <!-- Logo 2: Visual AI Lab -->
+                    <div style="margin: 0 20px;"> <!-- Controls spacing -->
+                        <a href="https://visual-ai.princeton.edu/"> <!-- I've added the correct lab link here for you -->
+                            <!-- Set a slightly smaller height to create visual balance -->
+                            <img src="img/logowithtext.png" alt="Princeton Visual AI Lab Logo" style="height: 35px;">
                         </a>
                     </div>
 
@@ -195,7 +197,6 @@
             </div>
         </div>
         <br>
-
         <!--<Add a large space between logos and the image below>-->
         <br>
         <br>
