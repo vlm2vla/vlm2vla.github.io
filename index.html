@@ -63,6 +63,11 @@
         align-items: center;
     }
 
+    /* NEW: A modifier class to make a specific logo smaller */
+    .logo-item--smaller {
+        max-height: 50px; /* Adjust this value down until it looks right */
+    }
+
     /* Makes the image inside the container fit properly */
     .logo-item img {
         max-width: 100%;
@@ -157,7 +162,7 @@
                     </div>
 
                     <!-- Logo 3: Your Project/Lab -->
-                    <div class="mx-4 logo-item"> <!-- Added 'logo-item' class -->
+                    <div class="mx-4 logo-item logo-item--smaller"> <!-- Added 'logo-item' class -->
                         <a href="#"> 
                             <img src="img/logowithtext.png" alt="Princeton Visual AI Lab Logo">
                         </a>
