@@ -166,7 +166,7 @@
                     <!-- Logo 3: Your Project/Lab -->
                     <div class="mx-4 logo-item"> <!-- Added 'logo-item' class -->
                         <a href="#"> 
-                            <img src="img/logowithtext.svg" alt="Princeton Visual AI Lab Logo">
+                            <img src="img/logowithtext.png" alt="Princeton Visual AI Lab Logo">
                         </a>
                     </div>
 
@@ -243,7 +243,7 @@
                     <div class="col-md-12 col-lg-10">
                         <h2 class="title is-3" style="text-align: center;">The Core Idea: Aligning Actions with Language</h2>
                         <p class="text-justify">
-                            Fine-tuning Vision-Language Models (VLMs) into robotic policies often leads to a critical problem: the model forgets its vast world knowledge in a process called catastrophic forgetting. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to solve this at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This preserves the model's reasoning capabilities without expensive co-training or complex architectural changes.
+                            Fine-tuning VLMs into robotic policies (VLAs) often leads to a critical problem: the model forgets its vast world knowledge. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to address this problem at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This data transformation, combined with parameter-efficient fine-tuning strategies, such as Low-Rank Adaptation (LoRA), helps preserve the model's reasoning capabilities without expensive co-training or complex architectural changes.
                         </p>
                     </div>
                 </div>
@@ -256,15 +256,15 @@
                     <div class="col-md-6">
                         <img src="img/logprobs.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
                         <p class="text-justify">
-                            <em><strong>Before fine-tuning</strong>, the base VLM already assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions. This shows our method is better aligned with the model's original knowledge.</em>
+                            <em><strong>Before fine-tuning</strong>, the base VLM (Gemma-3-12B-IT) assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions. This shows our data is better aligned with the model's original knowledge.</em>
                         </p>
                     </div>
 
                     <!-- Right Column: Safety Knowledge Image -->
                     <div class="col-md-6">
-                        <img src="img/Safety_Knoweldge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves safety knowledge.">
+                        <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime.">
                         <p class="text-justify">
-                            <em><strong>After fine-tuning</strong>, traditional VLAs lose the ability to reason about safety. Our method preserves this crucial world knowledge, allowing the model to understand and respond to safety-critical queries instead of just outputting motor commands.</em>
+                            <em><strong>After fine-tuning</strong>, Traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.</em>
                         </p>
                     </div>
 
