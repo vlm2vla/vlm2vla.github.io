@@ -118,7 +118,7 @@
                     <a href="https://lihzha.github.io/"> Lihan Zha,</a>
                 </span>
                 <span class="author-block">
-                    <a href="https://www.cs.princeton.edu/~olgarus/"> Olga Russakovsky</a>
+                    <a href="https://www.cs.princeton.edu/~olgarus/"> Olga Russakovsky, </a>
                 </span>
                 <span class="author-block">
                     <a href="https://irom-lab.princeton.edu/majumdar/"> Anirudha Majumdar</a>
@@ -176,6 +176,15 @@
             <div class="col-md-12">
                 <!-- The d-flex container is essential for easy horizontal and vertical centering -->
                 <div class="d-flex justify-content-center align-items-center">
+
+                    <!-- Logo 0: IROM Lab -->
+                    <div style="margin: 0 10px;"> <!-- Controls spacing -->
+                        <a href="https://irom-lab.princeton.edu/">
+                            <!-- Set a height, width will adjust automatically -->
+                            <img src="img/princeton_logo.png" alt="Princeton Logo" style="height: 48px;">
+                        </a>
+                    </div>
+
 
                     <!-- Logo 1: IROM Lab -->
                     <div style="margin: 0 10px;"> <!-- Controls spacing -->
@@ -240,7 +249,8 @@
             <p style="text-align:center;">
             </p>
             <h2 class="title is-3" style="text-align: center;">Abstract</h2>
-                <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;">
+                <!-- <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;"> -->
+                <p class="text-justify">
                     Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, which hinders generalization to novel scenarios, instruction following, and semantic understanding.
                     We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data.
                     Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm whose core idea is to <i>represent low-level actions using natural language</i> by relabeling robot demonstration data. 
@@ -338,7 +348,8 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12 col-lg-10">
                         <h2 class="title is-3" style="text-align: center;">Multimodal Understanding Evaluation</h2>
-                        <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;">
+                        <!-- <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;"> -->
+                        <p class="text-justify">
                             Comparison of VLMs and VLAs across multimodal understanding benchmarks. Our method preserves strong performance across diverse multimodal understanding tasks while maintaining robotic capabilities. The best and second best results for each benchmark are shown in <strong>bold</strong> and <u>underlined</u>, respectively.
                         </p>
                     </div>
@@ -547,7 +558,8 @@
                 <div class="row justify-content-md-center">
                     <div class="col-md-12">
                         <h2 class="title is-3" style="text-align: center;">Real Robot Experiments</h2>
-                        <p class="text-justify" style="text-align: center; max-width: 800px; margin: auto;">
+                        <!-- <p class="text-justify" style="text-align: center; max-width: 800px; margin: auto;"> -->
+                        <p class="text-justify">
                             We showcase our model's capabilities on numerous manipulation tasks, some requiring multilingual understanding, object generalization, and following complex, open-vocabulary instructions. We contrast our method to two state-of-the-art VLAs: OpenVLA and Embodied Chain of Thought (ECoT). Videos are shown below.
                         </p>
                     </div>
