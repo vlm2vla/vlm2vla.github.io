@@ -97,75 +97,94 @@
         object-fit: contain; /* Ensures the image scales without being distorted */
     }
     </style>
+    
+    <style>
+    /* Global font: Google Sans with local WOFF2 fallbacks */
+    @font-face {
+        font-family: 'Google Sans';
+        src: url('css/font/GoogleSan/GoogleSans-Regular.woff2') format('woff2');
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Google Sans';
+        src: url('css/font/GoogleSan/GoogleSans-Italic.woff2') format('woff2');
+        font-weight: 400;
+        font-style: italic;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Google Sans';
+        src: url('css/font/GoogleSan/GoogleSans-Medium.woff2') format('woff2');
+        font-weight: 500;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Google Sans';
+        src: url('css/font/GoogleSan/GoogleSans-MediumItalic.woff2') format('woff2');
+        font-weight: 500;
+        font-style: italic;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Google Sans';
+        src: url('css/font/GoogleSan/GoogleSans-Bold.woff2') format('woff2');
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: 'Google Sans';
+        src: url('css/font/GoogleSan/GoogleSans-BoldItalic.woff2') format('woff2');
+        font-weight: 700;
+        font-style: italic;
+        font-display: swap;
+    }
+    html, body {
+        font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 17px;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Google Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+        font-weight: 700;
+    }
+    </style>
 </head>
 <body>
-    <div class="container" id="main">
+    <div class="container" id="main" style="margin-top: 40px;">
         <div class="column has-text-centered">
+            <!-- <h1 class="title is-1 publication-title">
+                Actions as Language: </br> Fine-Tuning VLMs into VLAs </br> Without Catastrophic Forgetting
+            </h1> -->
             <h1 class="title is-1 publication-title">
-                Actions as Language: </br> Fine-Tuning VLMs into VLAs Without Catastrophic Forgetting
+                <span style="font-weight: normal;"><bold><b>Action as Langugae</b></bold>: <br/>Fine-Tuning VLMs into VLAs </br> Without Catastrophic Forgetting
+                <!-- <h3 style="font-weight: normal;"> with <img src="resources/logo-192x192.png" alt="Logo" style="vertical-align: text-top;" width="35"><b><a href="https://robot-tv.github.io">TeleVision</a></b></h3> -->
             </h1>
         </div>
         
         <div class="row has-text-centered">
             <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                    <a href="https://aasherh.github.io/">Asher J. Hancock,</a>
+                    <a href="https://aasherh.github.io/">Asher J. Hancock,&nbsp;&nbsp;&nbsp;</a>
                 </span>
                 <span class="author-block">
-                    <a href="https://xindiwu.github.io/"> Xindi Wu,</a>
+                    <a href="https://xindiwu.github.io/"> Xindi Wu,&nbsp;&nbsp;&nbsp;</a>
                 </span>
                 <span class="author-block">
-                    <a href="https://lihzha.github.io/"> Lihan Zha,</a>
+                    <a href="https://lihzha.github.io/"> Lihan Zha,&nbsp;&nbsp;&nbsp;</a>
                 </span>
                 <span class="author-block">
-                    <a href="https://www.cs.princeton.edu/~olgarus/"> Olga Russakovsky, </a>
+                    <a href="https://www.cs.princeton.edu/~olgarus/"> Olga Russakovsky,&nbsp;&nbsp;&nbsp; </a>
                 </span>
                 <span class="author-block">
                     <a href="https://irom-lab.princeton.edu/majumdar/"> Anirudha Majumdar</a>
                 </span>
             </div>
 
-            <!--
-            <div class="column has-text-centered">
-                <div class="publication-links">
-                  
-                  <span class="link-block">
-                    <a href="https://arxiv.org/abs/2410.01971"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Paper</span>
-                    </a>
-                  </span>
-            
-                  
-                  <span class="link-block">
-                    <a href="https://github.com/irom-lab/byovla"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-github"></i>
-                      </span>
-                      <span>Code</span>
-                    </a>
-                  </span>
-                  
-                  
-                  <span class="link-block">
-                    <a href="https://youtu.be/9PXC1tnD91g"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fab fa-youtube"></i>
-                      </span>
-                      <span>Video</span>
-                    </a>
-                  </span>
-  
-                </div>
-  
-              </div>
-            -->
-        </div>
 
         <br>
         
@@ -181,7 +200,7 @@
                     <div style="margin: 0 10px;"> <!-- Controls spacing -->
                         <a href="https://irom-lab.princeton.edu/">
                             <!-- Set a height, width will adjust automatically -->
-                            <img src="img/princeton_logo.png" alt="Princeton Logo" style="height: 60px;">
+                            <img src="img/princeton_logo.png" alt="Princeton Logo" style="height: 75px;">
                         </a>
                     </div>
 
@@ -205,6 +224,46 @@
                 </div>
             </div>
         </div>
+
+        <div class="column has-text-centered">
+            <div class="publication-links">
+              
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.01971"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+        
+              
+              <span class="link-block">
+                <a href="https://github.com/irom-lab/byovla"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+              
+              
+              <span class="link-block">
+                <a href="https://youtu.be/9PXC1tnD91g"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+
+            </div>
+
+          </div>
+        </div>
         
         <!--<Add a large space between logos and the image below>-->
         <br>
@@ -219,9 +278,9 @@
                     <image src="img/vlmvla_anchor_main_idood.png" width="100%"></image>
                 </p>
                 <br>
-                <h2 class="title is-3" style="text-align: center;">TLDR</h2>
+                <!-- <h2 class="title is-3" style="text-align: center;">TLDR</h2> -->
                 <p class="text-justify">
-                    We introduce <b>VLM2VLA</b>, a VLA model training paradigm that represents low-level robot actions as natural language to better align the robot fine-tuning data with the base VLM's representation space. 
+                    <bold><b>TL;DR</b></bold>: We introduce <b>VLM2VLA</b>, a VLA model training paradigm that represents low-level robot actions as natural language to better align the robot fine-tuning data with the base VLM's representation space. 
                     This alignment, combined with parameter-efficient fine-tuning, better preserves the VLM's foundational reasoning during VLA fine-tuning. 
                     Through extensive experimentation, <b>VLM2VLA</b> enables strong VQA performance and zero-shot generalization to new scenarios.</br>
                 </p>
@@ -291,7 +350,7 @@
 
         <!-- Main Section Title and Summary Paragraph -->
         <div class="row justify-content-md-center">
-            <div class="col-md-12 col-lg-10">
+            <div class="col-md-10 col-lg-9">
                 <h2 class="title is-3" style="text-align: center;">Representing Actions as Natural Language</h2>
                 <p class="text-justify">
                     Fine-tuning VLMs into robotic policies (VLAs) often leads to a critical problem: the model forgets its vast world knowledge. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to address this problem at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This data transformation, combined with parameter-efficient fine-tuning strategies, such as Low-Rank Adaptation (LoRA), helps preserve the model's reasoning capabilities without expensive co-training or complex architectural changes.
@@ -338,15 +397,180 @@
 
 
 
+         
+        <!-- ================================================================================= -->
+        <!-- START REAL ROBOT EXPERIMENTS SECTION -->
+        <!-- ================================================================================= -->
+
+        <!-- This CSS provides the styling for the carousel -->
+        <style>
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                max-width: 720px; /* Adjust this to control the max width of your video */
+                margin: auto;
+            }
+            .carousel-slide {
+                display: none; /* Hide all slides by default */
+                text-align: center;
+            }
+            .carousel-slide.active-slide {
+                display: block; /* Show only the active slide */
+            }
+            .video-item {
+                width: 100%;
+                border-radius: 15px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                margin-top: 10px;
+            }
+            /* Styling for the next/previous arrows */
+            .carousel-arrow {
+                position: absolute;
+                top: 55%; /* Vertically center the arrows on the video */
+                transform: translateY(-50%);
+                background-color: rgba(0, 0, 0, 0.4);
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                font-size: 20px;
+                cursor: pointer;
+                z-index: 10;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .carousel-arrow:hover {
+                background-color: rgba(0, 0, 0, 0.7);
+            }
+            .carousel-arrow.prev {
+                left: 15px;
+            }
+            .carousel-arrow.next {
+                right: 15px;
+            }
+        </style>
+
+        <section class="section">
+            <div class="container is-max-desktop">
+
+                <!-- Main Section Title and Description -->
+                <div class="row justify-content-md-center">
+                    <div class="col-md-10 col-lg-9">
+                        <h2 class="title is-3" style="text-align: center;">Real Robot Experiments</h2>
+                        <!-- <p class="text-justify" style="text-align: center; max-width: 800px; margin: auto;"> -->
+                        <p class="text-justify">
+                            We showcase our model's capabilities on numerous manipulation tasks, some requiring multilingual understanding, object generalization, and following complex, open-vocabulary instructions. We contrast our method to two state-of-the-art VLAs: OpenVLA and Embodied Chain of Thought (ECoT). Videos are shown below.
+                        </p>
+                    </div>
+                </div>
+                <br>
+
+                <!-- ROW 1: THE VIDEO CAROUSEL -->
+                <div class="row justify-content-md-center">
+                    <div class="col-md-12">
+                        <div class="carousel-container">
+                            <!-- Slide 1 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the Carrot</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/pickupcarrot.mp4"></video>
+                            </div>
+                            <!-- Slide 2 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the item on Ash Ketchum</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/pickupitemonash.mp4"></video>
+                            </div>
+                            <!-- Slide 3 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the Carrot (Instruction in Hindi)</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/hindi.mp4"></video>
+                            </div>
+                            <!-- Slide 4 -->
+                            <div class="carousel-slide">
+                                <h4 class="title is-5">Pick up the Carrot (Instruction in Mandarin)</h4>
+                                <video class="video-item" autoplay loop muted playsinline src="videos/mandarin.mp4"></video>
+                            </div>
+                            
+                            <!-- Navigation Arrows -->
+                            <button class="carousel-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
+                            <button class="carousel-arrow next" onclick="changeSlide(1)">&#10095;</button>
+                        </div>
+                    </div>
+                </div>
+                <br>
+
+                <!-- ROW 2: THE STATIC GRAPH (WITH CORRECTED WIDTH) -->
+                <div class="row justify-content-md-center">
+                    <!-- === CHANGED HERE === -->
+                    <div class="col-md-10 col-lg-9">
+                        <p style="text-align:center;">
+                            <img src="img/model_comparison_generalization_types_OOD.png" width="100%" alt="Graph comparing VLM2VLA performance on in-distribution and out-of-distribution tasks against OpenVLA and ECoT.">
+                        </p>
+                        <br>
+                        <p class="text-justify">
+                            Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
+                            manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization
+                            capabilities. Embodied Chain of Thought (ECoT) and <strong>VLM2VLA</strong> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
+                            was fine-tuned on the Open-X-Embodiment dataset.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- This JavaScript provides the functionality for the carousel -->
+        <script>
+            // Set the default slide to be "Pick up the item on Ash Ketchum", which is the 2nd video (index 1)
+            let currentSlideIndex = 1;
+            
+            // Get all the slide elements from the page
+            const slides = document.querySelectorAll(".carousel-slide");
+
+            // Function to show a specific slide
+            function showSlide(index) {
+                // Hide all slides first
+                slides.forEach(slide => {
+                    slide.classList.remove('active-slide');
+                });
+                // Show the requested slide
+                slides[index].classList.add('active-slide');
+            }
+
+            // Function to change the slide when an arrow is clicked
+            function changeSlide(direction) {
+                // Update the index
+                currentSlideIndex += direction;
+
+                // Wrap around if we go past the end or before the beginning
+                if (currentSlideIndex >= slides.length) {
+                    currentSlideIndex = 0;
+                } else if (currentSlideIndex < 0) {
+                    currentSlideIndex = slides.length - 1;
+                }
+                
+                // Show the new slide
+                showSlide(currentSlideIndex);
+            }
+
+            // Initialize the carousel to show the default slide when the page loads
+            document.addEventListener("DOMContentLoaded", function() {
+                showSlide(currentSlideIndex);
+            });
+        </script>
+
+
         <!-- ================================================================================= -->
         <!-- START MULTIMODAL UNDERSTANDING EVALUATION SECTION -->
         <!-- ================================================================================= -->
         <section class="section">
             <div class="container is-max-desktop">
+                <div class="container is-max-desktop">
 
                 <!-- Section Title and Description (Full Width) -->
                 <div class="row justify-content-md-center">
-                    <div class="col-md-12 col-lg-10">
+                    <div class="col-md-10 col-lg-9">
                         <h2 class="title is-3" style="text-align: center;">Multimodal Understanding Evaluation</h2>
                         <!-- <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;"> -->
                         <p class="text-justify">
@@ -496,168 +720,6 @@
         <!-- ================================================================================= -->
         <!-- END MULTIMODAL UNDERSTANDING EVALUATION SECTION -->
         <!-- ================================================================================= -->
-         
-        <!-- ================================================================================= -->
-        <!-- START REAL ROBOT EXPERIMENTS SECTION -->
-        <!-- ================================================================================= -->
-
-        <!-- This CSS provides the styling for the carousel -->
-        <style>
-            .carousel-container {
-                position: relative;
-                width: 100%;
-                max-width: 720px; /* Adjust this to control the max width of your video */
-                margin: auto;
-            }
-            .carousel-slide {
-                display: none; /* Hide all slides by default */
-                text-align: center;
-            }
-            .carousel-slide.active-slide {
-                display: block; /* Show only the active slide */
-            }
-            .video-item {
-                width: 100%;
-                border-radius: 15px;
-                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-                margin-top: 10px;
-            }
-            /* Styling for the next/previous arrows */
-            .carousel-arrow {
-                position: absolute;
-                top: 55%; /* Vertically center the arrows on the video */
-                transform: translateY(-50%);
-                background-color: rgba(0, 0, 0, 0.4);
-                color: white;
-                border: none;
-                border-radius: 50%;
-                width: 40px;
-                height: 40px;
-                font-size: 20px;
-                cursor: pointer;
-                z-index: 10;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-            .carousel-arrow:hover {
-                background-color: rgba(0, 0, 0, 0.7);
-            }
-            .carousel-arrow.prev {
-                left: 15px;
-            }
-            .carousel-arrow.next {
-                right: 15px;
-            }
-        </style>
-
-        <section class="section">
-            <div class="container is-max-desktop">
-
-                <!-- Main Section Title and Description -->
-                <div class="row justify-content-md-center">
-                    <div class="col-md-12">
-                        <h2 class="title is-3" style="text-align: center;">Real Robot Experiments</h2>
-                        <!-- <p class="text-justify" style="text-align: center; max-width: 800px; margin: auto;"> -->
-                        <p class="text-justify">
-                            We showcase our model's capabilities on numerous manipulation tasks, some requiring multilingual understanding, object generalization, and following complex, open-vocabulary instructions. We contrast our method to two state-of-the-art VLAs: OpenVLA and Embodied Chain of Thought (ECoT). Videos are shown below.
-                        </p>
-                    </div>
-                </div>
-                <br>
-
-                <!-- ROW 1: THE VIDEO CAROUSEL -->
-                <div class="row justify-content-md-center">
-                    <div class="col-md-12">
-                        <div class="carousel-container">
-                            <!-- Slide 1 -->
-                            <div class="carousel-slide">
-                                <h4 class="title is-5">Pick up the Carrot</h4>
-                                <video class="video-item" autoplay loop muted playsinline src="videos/pickupcarrot.mp4"></video>
-                            </div>
-                            <!-- Slide 2 -->
-                            <div class="carousel-slide">
-                                <h4 class="title is-5">Pick up the item on Ash Ketchum</h4>
-                                <video class="video-item" autoplay loop muted playsinline src="videos/pickupitemonash.mp4"></video>
-                            </div>
-                            <!-- Slide 3 -->
-                            <div class="carousel-slide">
-                                <h4 class="title is-5">Pick up the Carrot (Instruction in Hindi)</h4>
-                                <video class="video-item" autoplay loop muted playsinline src="videos/hindi.mp4"></video>
-                            </div>
-                            <!-- Slide 4 -->
-                            <div class="carousel-slide">
-                                <h4 class="title is-5">Pick up the Carrot (Instruction in Mandarin)</h4>
-                                <video class="video-item" autoplay loop muted playsinline src="videos/mandarin.mp4"></video>
-                            </div>
-                            
-                            <!-- Navigation Arrows -->
-                            <button class="carousel-arrow prev" onclick="changeSlide(-1)">&#10094;</button>
-                            <button class="carousel-arrow next" onclick="changeSlide(1)">&#10095;</button>
-                        </div>
-                    </div>
-                </div>
-                <br>
-
-                <!-- ROW 2: THE STATIC GRAPH (WITH CORRECTED WIDTH) -->
-                <div class="row justify-content-md-center">
-                    <!-- === CHANGED HERE === -->
-                    <div class="col-md-12 col-lg-10">
-                        <p style="text-align:center;">
-                            <img src="img/model_comparison_generalization_types_OOD.png" width="100%" alt="Graph comparing VLM2VLA performance on in-distribution and out-of-distribution tasks against OpenVLA and ECoT.">
-                        </p>
-                        <br>
-                        <p class="text-justify">
-                            Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
-                            manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization
-                            capabilities. Embodied Chain of Thought (ECoT) and <strong>VLM2VLA</strong> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
-                            was fine-tuned on the Open-X-Embodiment dataset.
-                        </p>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- This JavaScript provides the functionality for the carousel -->
-        <script>
-            // Set the default slide to be "Pick up the item on Ash Ketchum", which is the 2nd video (index 1)
-            let currentSlideIndex = 1;
-            
-            // Get all the slide elements from the page
-            const slides = document.querySelectorAll(".carousel-slide");
-
-            // Function to show a specific slide
-            function showSlide(index) {
-                // Hide all slides first
-                slides.forEach(slide => {
-                    slide.classList.remove('active-slide');
-                });
-                // Show the requested slide
-                slides[index].classList.add('active-slide');
-            }
-
-            // Function to change the slide when an arrow is clicked
-            function changeSlide(direction) {
-                // Update the index
-                currentSlideIndex += direction;
-
-                // Wrap around if we go past the end or before the beginning
-                if (currentSlideIndex >= slides.length) {
-                    currentSlideIndex = 0;
-                } else if (currentSlideIndex < 0) {
-                    currentSlideIndex = slides.length - 1;
-                }
-                
-                // Show the new slide
-                showSlide(currentSlideIndex);
-            }
-
-            // Initialize the carousel to show the default slide when the page loads
-            document.addEventListener("DOMContentLoaded", function() {
-                showSlide(currentSlideIndex);
-            });
-        </script>
 
         <!-- ================================================================================= -->
         <!-- END REAL ROBOT EXPERIMENTS SECTION -->
