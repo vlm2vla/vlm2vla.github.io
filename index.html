@@ -579,14 +579,24 @@
             </div>
             <br>
 
-            <!-- NEW Row for Side-by-Side Content -->
-            <div class="row justify-content-md-center">
+            <!-- 
+              KEY CHANGE 1: We add `align-items-stretch` (Bootstrap's default for rows)
+              to ensure both columns will stretch to the height of the tallest one.
+            -->
+            <div class="row justify-content-md-center align-items-stretch">
                 
-                <!-- Left Column (8/12 width): The Table -->
-                <!-- By adding d-flex and flex-column, we constrain its children to its height -->
+                <!-- 
+                  KEY CHANGE 2: The table's column is now a flex container itself.
+                  This allows us to control the sizing of its direct child (the scrollable div).
+                -->
                 <div class="col-md-8 d-flex flex-column">
-                    <!-- Added overflow-y: auto to enable vertical scrolling -->
-                    <div style="overflow-x: auto; overflow-y: auto;">
+                    <!-- 
+                      KEY CHANGE 3: We add `flex-grow-1` to this div.
+                      This tells it to "grow to fill all available vertical space" in its
+                      flex parent (`col-md-8`). Once it fills that space, the `overflow-y: auto`
+                      will activate a scrollbar if the table inside is too tall.
+                    -->
+                    <div style="overflow-x: auto; overflow-y: auto;" class="flex-grow-1">
                         <table class="table table-bordered text-center">
                             <thead>
                                 <tr>
@@ -770,8 +780,12 @@
                     </div>
                 </div>
 
-                <!-- Right Column (4/12 width): The Image -->
-                <div class="col-md-4 align-self-center">
+                <!-- 
+                  KEY CHANGE 4: Removed `align-self-center` and instead used flexbox
+                  internally to center the content. This allows the column itself to stretch
+                  to the full height of the row.
+                -->
+                <div class="col-md-4 d-flex flex-column justify-content-center">
                     <img src="img/vqa.png" class="img-fluid" alt="Radar plot of <b>VLM2VLA</b> against the base VLM backbone.">
                     <p class="text-center mt-2"><em>Qualitative examples of VQA performance. <span style="color:blue;">Blue</span> is Gemma-3-12B-IT, <span style="color:purple;">purple</span> is <b>VLM2VLA</b></em></p>
                 </div>
