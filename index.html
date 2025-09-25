@@ -280,9 +280,9 @@
                 <br>
                 <!-- <h2 class="title is-3" style="text-align: center;">TLDR</h2> -->
                 <p class="text-justify">
-                    <bold><b>TL;DR</b></bold>: We introduce <b>VLM2VLA</b>, a VLA model training paradigm that represents low-level robot actions as natural language to better align the robot fine-tuning data with the base VLM's representation space. 
-                    This alignment, combined with parameter-efficient fine-tuning, better preserves the VLM's foundational reasoning during VLA fine-tuning. 
-                    Through extensive experimentation, <b>VLM2VLA</b> enables strong VQA performance and zero-shot generalization to new scenarios.</br>
+                    We introduce <b>VLM2VLA</b>, a VLA model training paradigm that represents low-level robot actions in natural language to better align the robot fine-tuning data with the base VLM's representation space. 
+                    This alignment makes it possible to train VLAs solely with Low-Rank Adaptation (LoRA). 
+                    Through extensive experimentation, we show <b>VLM2VLA</b> yields a policy with strong VQA performance and zero-shot generalization to new scenarios.</br>
                 </p>
             </div>
         </div>
@@ -308,14 +308,13 @@
             <p style="text-align:center;">
             </p>
             <h2 class="title is-3" style="text-align: center;">Abstract</h2>
-                <!-- <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;"> -->
-                <p class="text-justify">
-                    Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, which hinders generalization to novel scenarios, instruction following, and semantic understanding.
-                    We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data.
-                    Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm whose core idea is to <i>represent low-level actions using natural language</i> by relabeling robot demonstration data. 
-                    This methodology better aligns the fine-tuning data to the base model's representation space, thereby mitigating the distribution mismatch while enabling effective robotic control. 
-                    As a result, the VLM can be fine-tuned on robot teleoperation data using a policy architecture that makes no modifications to the underlying VLM and without expensive co-training on internet-scale VLM datasets. 
-                    Through extensive Visual Question Answering (VQA) studies and real-world robotics experiments, we demonstrate that <b>VLM2VLA</b> preserves the VLM's core capabilities, enabling zero-shot generalization to novel tasks that require open-world semantic reasoning and multilingual instruction following.<br>
+                <p class="text-justify" style="text-align: center; margin-bottom: 1.5em;">
+                    Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, hindering generalization to novel scenarios, instruction following, and semantic understanding. 
+                    We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data. 
+                    Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm that first resolves this mismatch at the data level by <i>representing low-level actions with natural language</i>. 
+                    This alignment makes it possible to train VLAs <i>solely with Low-Rank Adaptation (LoRA)</i>, thereby minimally modifying the VLM backbone and averting catastrophic forgetting. 
+                    As a result, the VLM can be fine-tuned on robot teleoperation data without fundamentally altering the underlying architecture and without expensive co-training on internet-scale VLM datasets. 
+                    Through extensive Visual Question Answering (VQA) studies and over 800 real-world robotics experiments, we demonstrate that <b>VLM2VLA</b> preserves the VLM's core capabilities, enabling zero-shot generalization to novel tasks that require open-world semantic reasoning and multilingual instruction following.<br>
                 </p>
             </div>
         </div>
@@ -365,7 +364,7 @@
                 <!-- The container div is no longer needed for sizing -->
                 <div>
                     <!-- === CHANGED HERE: Added an inline style to scale the image === -->
-                    <img src="img/action_probability_distribution_plot_2.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
+                    <img src="img/logprobs_copy.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
                 </div>
                 <p class="text-justify" style="margin-top: 2rem;"> <!-- Added margin-top to create space after the scaled image -->
                     <em><strong>Before fine-tuning</strong>, the base VLM (Gemma-3-12B-IT) assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions (least likely tokens). This shows our data is better aligned with the model's original knowledge.</em>
@@ -461,7 +460,7 @@
                         <h2 class="title is-3" style="text-align: center;">Real Robot Experiments</h2>
                         <!-- <p class="text-justify" style="text-align: center; max-width: 800px; margin: auto;"> -->
                         <p class="text-justify">
-                            We showcase our model's capabilities on numerous manipulation tasks, some requiring multilingual understanding, object generalization, and following complex, open-vocabulary instructions. We contrast our method to two state-of-the-art VLAs: OpenVLA and Embodied Chain of Thought (ECoT). Videos are shown below.
+                            We showcase our model's capabilities on numerous manipulation tasks, some requiring multilingual understanding, object generalization, and following complex, open-vocabulary instructions. We contrast our method to two state-of-the-art VLAs: OpenVLA and Embodied Chain of Thought (ECoT), as well as a token-based ablation of our method (VLMVLA-AT). Videos of VLM2VLA are shown below.
                         </p>
                     </div>
                 </div>
@@ -505,13 +504,13 @@
                     <!-- === CHANGED HERE === -->
                     <div class="col-md-10 col-lg-9">
                         <p style="text-align:center;">
-                            <img src="img/model_comparison_generalization_types_OOD.png" width="100%" alt="Graph comparing VLM2VLA performance on in-distribution and out-of-distribution tasks against OpenVLA and ECoT.">
+                            <img src="img/model_comparison_generalization_types_OOD_ablation.png" width="100%" alt="Graph comparing VLM2VLA performance on in-distribution and out-of-distribution tasks against baselines and ablations.">
                         </p>
                         <br>
                         <p class="text-justify">
                             Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
                             manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization
-                            capabilities. Embodied Chain of Thought (ECoT) and <strong>VLM2VLA</strong> were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
+                            capabilities. Embodied Chain of Thought (ECoT), <strong>VLM2VLA</strong>, and VLM2VLA-AT were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
                             was fine-tuned on the Open-X-Embodiment dataset.
                         </p>
                     </div>
@@ -898,5 +897,7 @@
           </div>
 
     </div> -->
+
+        
 </body>
 </html>
