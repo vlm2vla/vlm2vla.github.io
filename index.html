@@ -161,7 +161,7 @@
                 Actions as Language: </br> Fine-Tuning VLMs into VLAs </br> Without Catastrophic Forgetting
             </h1> -->
             <h1 class="title is-1 publication-title">
-                <span style="font-weight: normal;"><bold><b>Action as Langugae</b></bold>: <br/>Fine-Tuning VLMs into VLAs </br> Without Catastrophic Forgetting
+                <span style="font-weight: normal;"><bold><b>Action as Language</b></bold>: <br/>Fine-Tuning VLMs into VLAs </br> Without Catastrophic Forgetting
                 <!-- <h3 style="font-weight: normal;"> with <img src="resources/logo-192x192.png" alt="Logo" style="vertical-align: text-top;" width="35"><b><a href="https://robot-tv.github.io">TeleVision</a></b></h3> -->
             </h1>
         </div>
@@ -352,7 +352,10 @@
             <div class="col-md-10 col-lg-9">
                 <h2 class="title is-3" style="text-align: center;">Representing Actions as Natural Language</h2>
                 <p style="text-align: justify; text-justify: inter-word;">
-                    Fine-tuning VLMs into robotic policies (VLAs) often leads to a critical problem: the model forgets its vast world knowledge. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to address this problem at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This data transformation, combined with parameter-efficient fine-tuning strategies, such as Low-Rank Adaptation (LoRA), helps preserve the model's reasoning capabilities without expensive co-training or complex architectural changes.
+                    The standard methodology of fundamentally modifying the VLM's architecture, tokenization vocabulary, or a combination thereof, coupled with full parameter fine-tuning on robot imitation learning data, introduces a crucial yet often overlooked trade-off: catastrophic forgetting, where the model loses its general-purpose world knowledge acquired during pretraining.
+                    Our key insight is that while parameter-efficient methods like Low-Rank Adaptation (LoRA) can avert catastrophic forgetting, their effectiveness relies on the fine-tuning data being sufficiently close to the model's pretrained representations.
+                    We therefore propose resolving this representational mismatch <i>at the data level</i>. Our data-centric approach <i>re-represents robot actions as natural language descriptions</i>, thereby aligning the VLA fine-tuning data directly with the VLM's pretrained representation space.
+                    This alignment enables LoRA to effectively adapt the VLM for robotic control without significantly perturbing its pretrained weights.
                 </p>
             </div>
         </div>
@@ -366,10 +369,10 @@
                     <!-- === CHANGED HERE: Added an inline style to scale the image === -->
                     <img src="img/logprobs_copy_original.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
                 </div>
-                <p style="text-align: justify; text-justify: inter-word;" class="mt-2"> <!-- Added margin-top to create space after the scaled image -->
-                    <em><strong>Before fine-tuning</strong>, the base VLM (Gemma-3-12B-IT) assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions (least likely tokens). This shows our data is better aligned with the model's original knowledge.</em>
-                </p>
             </div>
+            <p style="text-align: justify; text-justify: inter-word;">
+                    Distribution of action probabilities under Gemma-3-12B-IT <i>before</i> fine-tuning on robot teleoperation data. The model assigns significantly higher log-probabilities to actions represented as language compared to those defined by explicit tokenization modifications, e.g., least likely token assignment.
+                </p>
         </div>
                 
         <br><br> <!-- Extra space between the two figures -->
@@ -459,7 +462,7 @@
                     <div class="col-md-10 col-lg-9">
                         <h2 class="title is-3" style="text-align: center;">Real Robot Experiments</h2>
                         <!-- <p class="text-justify" style="text-align: center; max-width: 800px; margin: auto;"> -->
-                        <p class="text-align: justify; text-justify: inter-word;">
+                        <p style="text-align: justify; text-justify: inter-word;">
                             We showcase our model's capabilities on numerous manipulation tasks, some requiring multilingual understanding, object generalization, and following complex, open-vocabulary instructions. We contrast our method to two state-of-the-art VLAs: OpenVLA and Embodied Chain of Thought (ECoT), as well as a token-based ablation of our method (VLMVLA-AT). Videos of VLM2VLA are shown below.
                         </p>
                     </div>
@@ -507,7 +510,7 @@
                             <img src="img/model_comparison_generalization_types_OOD_ablation.png" width="100%" alt="Graph comparing VLM2VLA performance on in-distribution and out-of-distribution tasks against baselines and ablations.">
                         </p>
                         <br>
-                        <p class="text-align: justify; text-justify: inter-word;">
+                        <p style="text-align: justify; text-justify: inter-word;">
                             Comparative evaluation of VLA performance on in-distribution (ID) and out-of-distribution (OOD) robotic
                             manipulation tasks. <strong>VLM2VLA</strong> maintains high success rates on OOD tasks, highlighting its superior generalization
                             capabilities. Embodied Chain of Thought (ECoT), <strong>VLM2VLA</strong>, and VLM2VLA-AT were fine-tuned on the Bridgev2 dataset, whereas OpenVLA
@@ -578,7 +581,7 @@
             <div class="row justify-content-md-center">
                 <div class="col-md-10 col-lg-9">
                     <h2 class="title is-3" style="text-align: center;">Multimodal Understanding Evaluation</h2>
-                    <p class="text-align: justify; text-justify: inter-word;">
+                    <p style="text-align: justify; text-justify: inter-word;">
                         Comparison of VLMs and VLAs across multimodal understanding benchmarks. Our method preserves strong performance across diverse multimodal understanding tasks while maintaining robotic capabilities. The best and second best results for each benchmark are shown in <strong>bold</strong> and <u>underlined</u>, respectively.
                     </p>
                 </div>
