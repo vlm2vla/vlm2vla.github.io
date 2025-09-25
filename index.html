@@ -311,8 +311,8 @@
                 <p style="text-align: justify; text-justify: inter-word;">
                     Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, hindering generalization to novel scenarios, instruction following, and semantic understanding. 
                     We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data. 
-                    Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm that first resolves this mismatch at the data level by <em>representing low-level actions with natural language</em>. 
-                    This alignment makes it possible to train VLAs <em>solely with Low-Rank Adaptation (LoRA)</em>, thereby minimally modifying the VLM backbone and averting catastrophic forgetting. 
+                    Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm that first resolves this mismatch at the data level by <strong>representing low-level actions with natural language</strong>. 
+                    This alignment makes it possible to train VLAs <strong>solely with Low-Rank Adaptation (LoRA)</strong>, thereby minimally modifying the VLM backbone and averting catastrophic forgetting. 
                     As a result, the VLM can be fine-tuned on robot teleoperation data without fundamentally altering the underlying architecture and without expensive co-training on internet-scale VLM datasets. 
                     Through extensive Visual Question Answering (VQA) studies and over 800 real-world robotics experiments, we demonstrate that <b>VLM2VLA</b> preserves the VLM's core capabilities, enabling zero-shot generalization to novel tasks that require open-world semantic reasoning and multilingual instruction following.<br>
                 </p>
@@ -354,7 +354,7 @@
                 <p style="text-align: justify; text-justify: inter-word;">
                     The standard methodology for fine-tuning VLMs into VLAs by fundamentally modifying the VLM's architecture, tokenization vocabulary, or a combination thereof, coupled with full parameter fine-tuning on robot imitation learning data, introduces a crucial yet often overlooked trade-off: catastrophic forgetting, where the model loses its general-purpose world knowledge acquired during pretraining.
                     Our key insight is that while parameter-efficient methods like Low-Rank Adaptation (LoRA) can avert catastrophic forgetting, their effectiveness relies on the fine-tuning data being sufficiently close to the model's pretrained representations.
-                    We therefore propose resolving this representational mismatch <em>at the data level</em>. Our data-centric approach <em>re-represents robot actions as natural language descriptions</em>, thereby aligning the VLA fine-tuning data directly with the VLM's pretrained representation space.
+                    We therefore propose resolving this representational mismatch <strong>at the data level</strong>. Our data-centric approach <strong>re-represents robot actions as natural language descriptions</strong>, thereby aligning the VLA fine-tuning data directly with the VLM's pretrained representation space.
                     This alignment enables LoRA to effectively adapt the VLM for robotic control without significantly perturbing its pretrained weights.
                 </p>
             </div>
@@ -376,7 +376,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-9">
                 <p style="text-align: justify; text-justify: inter-word;">
-                    Distribution of action probabilities under Gemma-3-12B-IT <em>before fine-tuning</em> on robot teleoperation data. The model assigns significantly higher log-probabilities to actions represented as language compared to those defined by explicit tokenization modifications, e.g., least likely token assignment.
+                    Distribution of action probabilities under Gemma-3-12B-IT <strong>before fine-tuning</strong> on robot teleoperation data. The model assigns significantly higher log-probabilities to actions represented as language compared to those defined by explicit tokenization modifications, e.g., least likely token assignment.
                 </p>
             </div>
         </div>
@@ -399,7 +399,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-9">
                 <p style="text-align: justify; text-justify: inter-word;">
-                    <em>After fine-tuning</em>, Traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.
+                    <strong>After fine-tuning</strong>, Traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.
                 </p>
             </div>
         </div>
@@ -796,7 +796,7 @@
                 
                 <div class="col-md-4 d-flex flex-column justify-content-center">
                     <img src="img/vqa.png" class="img-fluid" alt="Radar plot of <b>VLM2VLA</b> against the base VLM backbone.">
-                    <p class="text-center mt-2"><em>Qualitative examples of VQA performance. <span style="color:blue;">Blue</span> is Gemma-3-12B-IT, <span style="color:purple;">purple</span> is <b>VLM2VLA</b></em></p>
+                    <p class="text-center mt-2"></p>Qualitative examples of VQA performance. <span style="color:blue;">Blue</span> is Gemma-3-12B-IT, <span style="color:purple;">purple</span> is <b>VLM2VLA</b></p>
                 </div>
 
             </div>
