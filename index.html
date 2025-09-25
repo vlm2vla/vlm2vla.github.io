@@ -279,7 +279,7 @@
                 </p>
                 <br>
                 <!-- <h2 class="title is-3" style="text-align: center;">TLDR</h2> -->
-                <p class="text-align: justify; text-justify: inter-word;">
+                <p style="text-align: justify; text-justify: inter-word;">
                     We introduce <b>VLM2VLA</b>, a VLA model training paradigm that represents low-level robot actions in natural language to better align the robot fine-tuning data with the base VLM's representation space. 
                     This alignment makes it possible to train VLAs solely with Low-Rank Adaptation (LoRA). 
                     Through extensive experimentation, we show <b>VLM2VLA</b> yields a policy with strong VQA performance and zero-shot generalization to new scenarios.</br>
@@ -308,7 +308,7 @@
             <p style="text-align:center;">
             </p>
             <h2 class="title is-3" style="text-align: center;">Abstract</h2>
-                <p class="text-align: justify; text-justify: inter-word;">
+                <p style="text-align: justify; text-justify: inter-word;">
                     Fine-tuning vision-language models (VLMs) on robot teleoperation data to create vision-language-action (VLA) models is a promising paradigm for training generalist policies, but it suffers from a fundamental tradeoff: learning to produce actions often diminishes the VLM's foundational reasoning and multimodal understanding, hindering generalization to novel scenarios, instruction following, and semantic understanding. 
                     We argue that this catastrophic forgetting is due to a distribution mismatch between the VLM's internet-scale pretraining corpus and the robotics fine-tuning data. 
                     Inspired by this observation, we introduce <b>VLM2VLA</b>: a VLA training paradigm that first resolves this mismatch at the data level by <i>representing low-level actions with natural language</i>. 
@@ -351,7 +351,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-9">
                 <h2 class="title is-3" style="text-align: center;">Representing Actions as Natural Language</h2>
-                <p class="text-align: justify; text-justify: inter-word;">
+                <p style="text-align: justify; text-justify: inter-word;">
                     Fine-tuning VLMs into robotic policies (VLAs) often leads to a critical problem: the model forgets its vast world knowledge. We argue this happens because of a fundamental "distribution mismatch" between the VLM's original internet-scale pretraining and the specialized, low-level action space of robotics. Our key insight is to address this problem at the data level: by <strong>re-representing robot actions as natural language</strong>, we align the fine-tuning data directly with the VLM's pretrained knowledge. This data transformation, combined with parameter-efficient fine-tuning strategies, such as Low-Rank Adaptation (LoRA), helps preserve the model's reasoning capabilities without expensive co-training or complex architectural changes.
                 </p>
             </div>
@@ -366,7 +366,7 @@
                     <!-- === CHANGED HERE: Added an inline style to scale the image === -->
                     <img src="img/logprobs_copy_original.png" class="img-fluid method-image" alt="Graph showing higher log probabilities for language-based actions.">
                 </div>
-                <p class="text-align: justify; text-justify: inter-word;" style="margin-top: 2rem;"> <!-- Added margin-top to create space after the scaled image -->
+                <p style="text-align: justify; text-justify: inter-word;" class="mt-2"> <!-- Added margin-top to create space after the scaled image -->
                     <em><strong>Before fine-tuning</strong>, the base VLM (Gemma-3-12B-IT) assigns much higher probabilities to our natural language action descriptions than to standard, tokenized robot actions (least likely tokens). This shows our data is better aligned with the model's original knowledge.</em>
                 </p>
             </div>
@@ -381,7 +381,7 @@
                 <div class="figure-container--wide">
                     <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime." scale="1.25">
                 </div>
-                <p class="text-align: justify; text-justify: inter-word;">
+                <p style="text-align: justify; text-justify: inter-word;">
                     <em><strong>After fine-tuning</strong>, Traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.</em>
                 </p>
             </div>
