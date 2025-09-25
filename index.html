@@ -581,7 +581,7 @@
 
                 <!-- NEW Row for Side-by-Side Content -->
                 <div class="row justify-content-md-center">
-                    
+
                     <!-- Left Column (8/12 width): The Table -->
                     <div class="col-md-8">
                         <div style="overflow-x: auto;">
@@ -605,6 +605,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    <!-- Prismatic Family -->
+                                    <tr style="background-color: #e9ecef;">
+                                        <td colspan="14" class="text-start ps-3"><strong>Prismatic VLM Family</strong></td>
+                                    </tr>
                                     <tr>
                                         <td><strong>Prismatic VLM</strong></td>
                                         <td>7b</td>
@@ -653,24 +657,29 @@
                                         <td>0</td>
                                         <td>25.6</td>
                                     </tr>
+
+                                    <!-- Gemma-3 Family -->
+                                    <tr style="background-color: #e9ecef;">
+                                        <td colspan="14" class="text-start ps-3"><strong>Gemma-3 Family</strong></td>
+                                    </tr>
                                     <tr>
-                                        <td><strong>Gemma-3-4b-it</strong></td>
+                                        <td><strong>Gemma-3-4B-IT</strong></td>
                                         <td>4b</td>
                                         <td>39.3</td>
                                         <td>37.1</td>
                                         <td>1205.8</td>
                                         <td><u>70.2</u></td>
-                                        <td><u>68.6</u></td>
+                                        <td>68.6</td>
                                         <td>64.3</td>
                                         <td>61.5</td>
                                         <td>68.8</td>
                                         <td>40.9</td>
                                         <td>70.5</td>
                                         <td>50.3</td>
-                                        <td><u>44.0</u></td>
+                                        <td>44.0</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>Gemma-3-12b-it</strong></td>
+                                        <td><strong>Gemma-3-12B-IT</strong></td>
                                         <td>12b</td>
                                         <td><strong>46.0</strong></td>
                                         <td><u>46.3</u></td>
@@ -682,13 +691,29 @@
                                         <td><strong>80.6</strong></td>
                                         <td><strong>50.4</strong></td>
                                         <td><strong>78.5</strong></td>
-                                        <td><u>55.1</u></td>
+                                        <td>55.1</td>
                                         <td><strong>50.6</strong></td>
                                     </tr>
-                                    <tr style="background-color: #f2f2f2;">
-                                        <td><strong>Ours</strong></td>
+                                    <tr>
+                                        <td><strong>VLM2VLA-AT</strong></td>
                                         <td>12b</td>
-                                        <td><u>42.7</u></td>
+                                        <td><u>45.9</u></td>
+                                        <td>45.2</td>
+                                        <td>1082.2</td>
+                                        <td>65.5</td>
+                                        <td><u>70.9</u></td>
+                                        <td>66.8</td>
+                                        <td>64.2</td>
+                                        <td>74.6</td>
+                                        <td>44.8</td>
+                                        <td><u>74.1</u></td>
+                                        <td>41.8</td>
+                                        <td><u>44.5</u></td>
+                                    </tr>
+                                    <tr style="background-color: #f2f2f2;">
+                                        <td><strong>VLM2VLA (Ours)</strong></td>
+                                        <td>12b</td>
+                                        <td>42.7</td>
                                         <td><strong>48.0</strong></td>
                                         <td><u>1391.7</u></td>
                                         <td>63.9</td>
@@ -697,14 +722,52 @@
                                         <td><u>64.9</u></td>
                                         <td><u>78.4</u></td>
                                         <td><u>46.2</u></td>
-                                        <td><u>74.0</u></td>
+                                        <td>74.0</td>
                                         <td><strong>58.3</strong></td>
                                         <td>43.3</td>
+                                    </tr>
+                                    
+                                    <!-- Open-Source Co-Trained VLAs Family -->
+                                    <tr style="background-color: #e9ecef;">
+                                        <td colspan="14" class="text-start ps-3"><strong>Open-Source Co-Trained VLAs</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>MolmoAct</strong></td>
+                                        <td>7b</td>
+                                        <td>28.4</td>
+                                        <td>1.2</td>
+                                        <td>1224.5</td>
+                                        <td>52.7</td>
+                                        <td>55.1</td>
+                                        <td>46.3</td>
+                                        <td>57.5</td>
+                                        <td>58.7</td>
+                                        <td>41.9</td>
+                                        <td>2.0</td>
+                                        <td><u>55.9</u></td>
+                                        <td>8.6</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>&pi;<sub>0.5</sub></strong></td>
+                                        <td>3b</td>
+                                        <td>24.0</td>
+                                        <td>21.7</td>
+                                        <td>1061.9</td>
+                                        <td>6.8</td>
+                                        <td>6.8</td>
+                                        <td>0.3</td>
+                                        <td>10.0</td>
+                                        <td>4.6</td>
+                                        <td>7.7</td>
+                                        <td>27.0</td>
+                                        <td>5.1</td>
+                                        <td>2.7</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
+                </div>
 
                     <!-- Right Column (4/12 width): The Image -->
                     <div class="col-md-4 align-self-center">
