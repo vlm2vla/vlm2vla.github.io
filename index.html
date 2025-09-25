@@ -352,7 +352,7 @@
             <div class="col-md-10 col-lg-9">
                 <h2 class="title is-3" style="text-align: center;">Representing Actions as Natural Language</h2>
                 <p style="text-align: justify; text-justify: inter-word;">
-                    The standard methodology of fundamentally modifying the VLM's architecture, tokenization vocabulary, or a combination thereof, coupled with full parameter fine-tuning on robot imitation learning data, introduces a crucial yet often overlooked trade-off: catastrophic forgetting, where the model loses its general-purpose world knowledge acquired during pretraining.
+                    The standard methodology for fine-tuning VLMs into VLAs by fundamentally modifying the VLM's architecture, tokenization vocabulary, or a combination thereof, coupled with full parameter fine-tuning on robot imitation learning data, introduces a crucial yet often overlooked trade-off: catastrophic forgetting, where the model loses its general-purpose world knowledge acquired during pretraining.
                     Our key insight is that while parameter-efficient methods like Low-Rank Adaptation (LoRA) can avert catastrophic forgetting, their effectiveness relies on the fine-tuning data being sufficiently close to the model's pretrained representations.
                     We therefore propose resolving this representational mismatch <i>at the data level</i>. Our data-centric approach <i>re-represents robot actions as natural language descriptions</i>, thereby aligning the VLA fine-tuning data directly with the VLM's pretrained representation space.
                     This alignment enables LoRA to effectively adapt the VLM for robotic control without significantly perturbing its pretrained weights.
