@@ -352,10 +352,10 @@
             <div class="col-md-10 col-lg-9">
                 <h2 class="title is-3" style="text-align: center;">Representing Actions as Natural Language</h2>
                 <p style="text-align: justify; text-justify: inter-word;">
-                    The standard methodology for fine-tuning VLMs into VLAs by fundamentally modifying the VLM's architecture, tokenization vocabulary, or a combination thereof, coupled with full parameter fine-tuning on robot imitation learning data, introduces a crucial yet often overlooked trade-off: catastrophic forgetting, where the model loses its general-purpose world knowledge acquired during pretraining.
+                    The current paradigm of fundamentally modifying the VLM's architecture, tokenization vocabulary, or a combination thereof, coupled with full parameter fine-tuning on robot imitation learning data, introduces a crucial yet often overlooked trade-off when training VLAs: catastrophic forgetting, where the VLM backbone loses its general-purpose world knowledge acquired during pretraining.
                     Our key insight is that while parameter-efficient methods like Low-Rank Adaptation (LoRA) can avert catastrophic forgetting, their effectiveness relies on the fine-tuning data being sufficiently close to the model's pretrained representations.
                     We therefore propose resolving this representational mismatch <strong>at the data level</strong>. Our data-centric approach <strong>re-represents robot actions as natural language descriptions</strong>, thereby aligning the VLA fine-tuning data directly with the VLM's pretrained representation space.
-                    This alignment enables LoRA to effectively adapt the VLM for robotic control without significantly perturbing its pretrained weights.
+                    This <strong>alignment enables LoRA to effectively adapt the VLM for robotic control</strong> without significantly perturbing its pretrained weights.
                 </p>
             </div>
         </div>
@@ -398,7 +398,7 @@
         <div class="row justify-content-md-center">
             <div class="col-md-10 col-lg-9">
                 <p style="text-align: justify; text-justify: inter-word;">
-                    <strong>After fine-tuning</strong>, Traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.
+                    <strong>After fine-tuning</strong>, traditional VLA training procedures often overfit to the robot training data, sacrificing their original reasoning capabilities for low-level action prediction (center). In contrast, <b> VLM2VLA </b> preserves the world understanding of the pretrained VLM (left), allowing the model to reason about potential safety risks instead of just motor commands.
                 </p>
             </div>
         </div>
