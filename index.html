@@ -384,16 +384,26 @@
                 
         <br><br> <!-- Extra space between the two figures -->
 
-        <!-- ROW 2 FOR THE SAFETY IMAGE (WIDE CONTAINER) -->
         <div class="row justify-content-center text-center">
             <div class="col-md-8">
-                <!-- Using the WIDE container here -->
+                <!-- The container div is no longer needed for sizing -->
+                <div>
+                    <!-- === CHANGED HERE: Added an inline style to scale the image === -->
+                    <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime." style="transform: scale(1.5);">
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- <div class="row justify-content-center text-center">
+            <div class="col-md-10 col-lg-9">
+                
                 <div class="figure-container--wide">
                     <img src="img/Safety_Knowledge_Degradation.png" class="img-fluid method-image" alt="Comparison showing our method preserves world knowledge and reasoning capabilities at runtime." scale="1.5">
                 </div>
                 
             </div>
-        </div>
+        </div> -->
 
         <!-- Main Section Title and Summary Paragraph -->
         <div class="row justify-content-md-center">
